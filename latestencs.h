@@ -1,3 +1,5 @@
+#pragama once
+
 #define CLOSURE_CONT_ENC        VMValue1
 #define CLOSURE_DEBUGNAME_ENC   VMValue2
 #define LSTATE_STACKSIZE_ENC    VMValue4
