@@ -2,16 +2,18 @@
 
 #include <cstdint>
 
+// version-390ba09e7e944154
+
 constexpr uintptr_t LuaD_Throw = 0x432f430;
 constexpr uintptr_t ScriptContextResume = 0x1d63290;
 constexpr uintptr_t rbx_print = 0x1dea8d0;
-constexpr uintptr_t FireClickDetector = 0x6f7df0;
+constexpr uintptr_t FireClickDetector = 0x0;
 constexpr uintptr_t IsLegalSendEvent = 0x5588604;
 constexpr uintptr_t KTable = 0x749b670;
 constexpr uintptr_t luau_execute = 0x4348a80;
-constexpr uintptr_t Raknet_Send = 0x30dd090;
-constexpr uintptr_t RakNet_Receive = 0x30dd3f0;
-constexpr uintptr_t OpcodeLookupTable = 0x43421b6;
+constexpr uintptr_t Raknet_Send = 0x30dd090; // may be incorrect
+constexpr uintptr_t RakNet_Receive = 0x30dd3f0; // may be incorrect
+constexpr uintptr_t OpcodeLookupTable = 0x0;
 constexpr uintptr_t SetFastFlag = 0x4807b00;
 constexpr uintptr_t newpage = 0x4389d60;
 constexpr uintptr_t newclasspage = 0x4389e10;
