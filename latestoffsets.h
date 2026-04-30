@@ -1,51 +1,78 @@
 #pragma once
 
+/*
+  Zela Dumper 
+   Made by king_okr & ziadweam8
+   rbx LIVE-WindowsPlayer-version-acc4b74f79e743b9
+   Time taken 3.72s
+   Offsets found 22
+   Date 2026-04-30 20:20:11
+
+*/
+
 #include <cstdint>
+#include <Windows.h>
 
-// version-390ba09e7e944154
+struct lua_State;
+struct YieldState;
+struct YieldingLuaThread;
 
-constexpr uintptr_t LuaD_Throw = 0x432f430;
-constexpr uintptr_t ScriptContextResume = 0x1d63290;
-constexpr uintptr_t rbx_print = 0x1dea8d0;
-constexpr uintptr_t FireClickDetector = 0x0;
-constexpr uintptr_t IsLegalSendEvent = 0x5588604;
-constexpr uintptr_t KTable = 0x749b670;
-constexpr uintptr_t luau_execute = 0x4348a80;
-constexpr uintptr_t Raknet_Send = 0x30dd090; // may be incorrect
-constexpr uintptr_t RakNet_Receive = 0x30dd3f0; // may be incorrect
-constexpr uintptr_t OpcodeLookupTable = 0x0;
-constexpr uintptr_t SetFastFlag = 0x4807b00;
-constexpr uintptr_t newpage = 0x4389d60;
-constexpr uintptr_t newclasspage = 0x4389e10;
-constexpr uintptr_t freeclasspage = 0x4389e80;
-constexpr uintptr_t newblock = 0x4389fc0;
-constexpr uintptr_t newgcoblock = 0x4389f20;
-constexpr uintptr_t freeblock = 0x438a050;
-constexpr uintptr_t luaM_free = 0x438a110;
-constexpr uintptr_t luaM_freegco = 0x438a190;
-constexpr uintptr_t luaM_visitgco = 0x438a2a0;
-constexpr uintptr_t luavm_load = 0x1c69c40;
-constexpr uintptr_t f_luaopen = 0x4332220;
-constexpr uintptr_t auxopen = 0x436ade0;
-constexpr uintptr_t newproxy = 0x436aa80;
-constexpr uintptr_t tostring = 0x436aa20;
-constexpr uintptr_t lua_rawcheckstack = 0x432d770;
-constexpr uintptr_t luaA_toobject = 0x19c01f4f;
-constexpr uintptr_t lua_pushvfstring = 0x432e310;
-constexpr uintptr_t luaL_checklstring = 0x43364f0;
-constexpr uintptr_t luaL_checkany = 0x4369750;
-constexpr uintptr_t luaG_runerrorL = 0x43402b0;
-constexpr uintptr_t luaO_pushvfstring = 0x43a0760;
-constexpr uintptr_t luaF_freeproto2 = 0x433e8b0;
-constexpr uintptr_t luaF_newproto = 0x43993d0;
-constexpr uintptr_t luaD_rawrunprotected = 0x432f400;
-constexpr uintptr_t luaV_getimport = 0x4340ab0;
-constexpr uintptr_t luaC_step = 0x433f230;
-constexpr uintptr_t GetLuaState = 0x1c33f90;
-constexpr uintptr_t Bridge_registerClass = 0x1c27c40;
-constexpr uintptr_t Vector3Bridge_registerClass = 0x1ccb450;
-constexpr uintptr_t cancel = 0x1de1ad0;
-constexpr uintptr_t coroutine_create = 0x436dbc0;
-constexpr uintptr_t coroutine_running = 0x1d1bef1;
-constexpr uintptr_t coroutine_yield = 0x436e200;
-constexpr uintptr_t remapUserdataTypes = 0x4341140;
+#define REBASE(Address) (Address + reinterpret_cast<uintptr_t>(GetModuleHandleA(nullptr)))
+
+namespace Offsets
+{
+    const uintptr_t Print = REBASE(0x1E21AD0);
+    const uintptr_t OpcodeLookupTable = REBASE(0x646C630);
+    const uintptr_t ScriptContextResume = REBASE(0x1D7DCD0);
+    const uintptr_t GetLuaStateForInstance = REBASE(0x1C4BAD0);
+
+    namespace Luau
+    {
+        const uintptr_t Luau_Execute = REBASE(0x43AD490);
+        const uintptr_t LuaO_NilObject = REBASE(0x5F52318);
+        const uintptr_t LuaH_DummyNode = REBASE(0x5F518C8);
+        const uintptr_t LuaD_throw = REBASE(0x4393840);
+    }
+
+    namespace DataModel
+    {
+        const uintptr_t ChildrenStart = 0x78;
+        const uintptr_t GameLoaded = 0x5F8;
+    }
+
+    namespace ExtraSpace
+    {
+        const uintptr_t RequireBypass = REBASE(0x928);
+        const uintptr_t IsCoreScript = REBASE(0x160); // guessed, may be incorrect
+    }
+
+    namespace Globals
+    {
+        const uintptr_t WebSocketServiceEnableClientCreation = REBASE(0x63925D0);
+        const uintptr_t KTable = REBASE(0x751A7B0);
+    }
+
+    namespace TaskScheduler
+    {
+        const uintptr_t RawScheduler = REBASE(0x7CF5400);
+        const uintptr_t TaskSchedulerTargetFps = 0x118;
+    }
+
+    namespace Misc
+    {
+        const uintptr_t FireTouchInterest = REBASE(0x83F430);
+        const uintptr_t pushInstance = REBASE(0x1D43290);
+        const uintptr_t luaf_newproto = REBASE(0x43FE8C0);
+        const uintptr_t IdentityPtr = REBASE(0x7661528);
+        const uintptr_t EnableLoadModule = REBASE(0x75A0878);
+        const uintptr_t LockViolationInstanceCrash = REBASE(0x7598008);
+    }
+}
+
+namespace Roblox
+{
+    inline auto Print = (uintptr_t(*)(int, const char*, ...))Offsets::Print;
+    inline auto Luau_Execute = (void(__fastcall*)(lua_State*))Offsets::Luau::Luau_Execute;
+    inline auto GetLuaStateForInstance = (lua_State*(__fastcall*)(uint64_t, uint64_t*, uint64_t*))Offsets::GetLuaStateForInstance;
+    inline auto ScriptContextResume = (uint64_t(__fastcall*)(uint64_t, YieldState*, YieldingLuaThread**, uint32_t, uint8_t, uint64_t))Offsets::ScriptContextResume;
+}
