@@ -1,12 +1,20 @@
 #pragma once
+/*
+full changelog 
+corrected: getluastateforinstance, identityptr 
+fixed: luaf_newproto, luaf_freeproto, gettlspointer
+made raknet non-pattern dependent.
+added: raycast and freeobj
+all runtime, i hope roblox doesnt break my raknet instantly
+*/
 
 /*
   Zela Dumper 
    Made by king_okr, ziadweam8 & pibbly
-   rbx executor-WindowsPlayer-version-ddf602d9cfe44005
-   Time taken 59.93s
-   Offsets found 150
-   Date 2026-08-22 09:40:05
+   rbx version-ddf602d9cfe44005
+   Time taken 35.99s
+   Offsets found 156
+   Date 2026-08-22 22:43:01
 
 */
 
@@ -44,7 +52,7 @@ namespace Offsets
         const uintptr_t ConnectionDisconnect = REBASE(0x2252430);
         // luaM_toobig Not found
         const uintptr_t luaL_typerrorL = REBASE(0xB32BF0);
-        const uintptr_t luaL_argerrorL = REBASE(0xB71E70);
+        const uintptr_t luaL_argerrorL = REBASE(0xB33CE0);
     }
 
     namespace RemoteEvent (credits ravage)
@@ -56,7 +64,7 @@ namespace Offsets
     namespace Raycast
     {
         const uintptr_t RaycastBoundDesc = REBASE(0x82012A0);
-        const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
+const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
     }
 
     namespace LuaLib
@@ -211,9 +219,9 @@ namespace Offsets
     namespace ExtraSpace
     {
         // RequireBypass Not found
-        const uintptr_t IsCoreScript = REBASE(0xC8); // wrong
+        const uintptr_t IsCoreScript = REBASE(0xC8);
         // EnableLoadModule Not found
-        const uintptr_t LockViolationInstanceCrash = REBASE(0x6D68410);
+        const uintptr_t LockViolationInstanceCrash = REBASE(0x8226758);
         // LockViolationScriptCrash Not found
     }
 
@@ -244,11 +252,10 @@ namespace Offsets
 
     namespace Raknet
     {
-        // RaknetSend Not found
-        // RakPeerVirtualTable Not found
-        // ProcessNetworkPacket Not found
-        const uintptr_t ReportNetworkError = REBASE(0x2901380);
-        // HandleConnectionState Not found
+        const uintptr_t RaknetSend = REBASE(0x49862A0);
+        const uintptr_t RaknetReceive = REBASE(0x4986890);
+        const uintptr_t DeallocatePacket = REBASE(0x4986F40);
+        const uintptr_t vtable = REBASE(0x6A81DE8);
     }
 
     namespace Misc
