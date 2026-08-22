@@ -4,8 +4,8 @@
   Zela Dumper 
    Made by king_okr, ziadweam8 & pibbly
    rbx version-ddf602d9cfe44005
-   Time taken 38.36s
-   Offsets found 158
+   Time taken 46.10s
+   Offsets found 161
    Date 2026-08-22 22:43:01
 
 */
@@ -51,8 +51,10 @@ namespace Offsets
     {
         const uintptr_t FireClient = REBASE(0x50333B0);
         const uintptr_t FireServer = REBASE(0x5033210);
+        const uintptr_t InvokeServer = REBASE(0x506AAA0);
+        const uintptr_t InvokeClient = REBASE(0x506ACA0);
+        const uintptr_t FireAllClients = REBASE(0x503365B);
     }
-
     namespace Raycast
     {
         const uintptr_t RaycastBoundDesc = REBASE(0x82012A0);
@@ -210,9 +212,10 @@ namespace Offsets
 
     namespace ExtraSpace
     {
-        const uintptr_t RequireBypass = REBASE(0x898);
-        const uintptr_t IsCoreScript = REBASE(0x168);
-        const uintptr_t LockViolationInstanceCrash = REBASE(0x8226758);
+        const uintptr_t RequireBypass = 0x898;
+        const uintptr_t IsCoreScript = 0x168;
+        const uintptr_t LockViolationInstanceCrash = REBASE(0x8226758); //?
+        const uintptr_t EnableLoadModule = REBASE(0x8390188); //?
     }
 
     namespace Globals
