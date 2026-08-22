@@ -4,8 +4,8 @@
   Zela Dumper 
    Made by king_okr, ziadweam8 & pibbly
    rbx version-ddf602d9cfe44005
-   Time taken 35.99s
-   Offsets found 156
+   Time taken 38.36s
+   Offsets found 158
    Date 2026-08-22 22:43:01
 
 */
