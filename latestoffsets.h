@@ -1,12 +1,4 @@
 #pragma once
-/*
-full changelog 
-corrected: getluastateforinstance, identityptr 
-fixed: luaf_newproto, luaf_freeproto, gettlspointer
-made raknet non-pattern dependent.
-added: raycast and freeobj
-all runtime, i hope roblox doesnt break my raknet instantly
-*/
 
 /*
   Zela Dumper 
@@ -28,14 +20,14 @@ struct DataModel;
 struct TaskScheduler;
 
 #define REBASE(Address) (Address + reinterpret_cast<uintptr_t>(GetModuleHandleA(nullptr)))
-
+// //? = may be wrong
 namespace Offsets
 {
     const uintptr_t Print = REBASE(0x92C340);
     const uintptr_t OpcodeLookupTable = REBASE(0x6B83740);
     const uintptr_t ScriptContextResume = REBASE(0x22BBA10);
     const uintptr_t GetLuaStateForInstance = REBASE(0x2219D10);
-        const uintptr_t GetPropertyData = REBASE(0x589CEF0);
+        const uintptr_t GetPropertyData = REBASE(0x589CEF0); //?
         const uintptr_t GetTLSPointer = REBASE(0x4170);
 
     namespace Luau
@@ -49,13 +41,13 @@ namespace Offsets
         const uintptr_t luaF_freeproto = REBASE(0xB50AB0);
         const uintptr_t PushInstance = REBASE(0x222A6B0);
         // loadsafe Not found
-        const uintptr_t ConnectionDisconnect = REBASE(0x2252430);
+        const uintptr_t ConnectionDisconnect = REBASE(0x2252430); //?
         // luaM_toobig Not found
         const uintptr_t luaL_typerrorL = REBASE(0xB32BF0);
         const uintptr_t luaL_argerrorL = REBASE(0xB33CE0);
     }
 
-    namespace RemoteEvent (credits ravage)
+    namespace RemoteEvent //(credits ravage)
     {
         const uintptr_t FireClient = REBASE(0x50333B0);
         const uintptr_t FireServer = REBASE(0x5033210);
@@ -64,7 +56,7 @@ namespace Offsets
     namespace Raycast
     {
         const uintptr_t RaycastBoundDesc = REBASE(0x82012A0);
-const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
+        const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
     }
 
     namespace LuaLib
@@ -218,22 +210,13 @@ const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
 
     namespace ExtraSpace
     {
-        // RequireBypass Not found
-        const uintptr_t IsCoreScript = REBASE(0xC8);
-        // EnableLoadModule Not found
         const uintptr_t LockViolationInstanceCrash = REBASE(0x8226758);
-        // LockViolationScriptCrash Not found
     }
 
     namespace Globals
     {
-        // luaT_typenames Not found
-        const uintptr_t WebSocketServiceEnableClientCreation = REBASE(0x6C9EEE8);
-        // luaT_Eventnames Not found
-        // FlogDataBank Not found
-        // AppDataInfo Not found
+        const uintptr_t WebSocketServiceEnableClientCreation = REBASE(0x6C9EEE8); //?
         const uintptr_t IdentityPtr = REBASE(0x7EEB448);
-        // HashTableLookup Not found
     }
 
     namespace TaskScheduler
@@ -242,12 +225,6 @@ const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
         const uintptr_t TaskSchedulerPointer = REBASE(0x88B64C0);
         const uintptr_t JobStart = 0xC8;
         const uintptr_t JobName = 0x18;
-    }
-
-    namespace TaskScheduler
-    {
-        // SetFFlag Not found
-        // GetFFlag Not found
     }
 
     namespace Raknet
@@ -260,9 +237,7 @@ const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
 
     namespace Misc
     {
-        // GetCurrentThreadId Not found
-        const uintptr_t FireTouchInterest = REBASE(0x1E46C30);
-        // fireProximityPrompt Not found
+        const uintptr_t FireTouchInterest = REBASE(0x1E46C30); //?
     }
 }
 
