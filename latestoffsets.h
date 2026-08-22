@@ -4,9 +4,9 @@
   Zela Dumper 
    Made by king_okr, ziadweam8 & pibbly
    rbx executor-WindowsPlayer-version-ddf602d9cfe44005
-   Time taken 66.43s
-   Offsets found 146
-   Date 2026-08-22 05:43:47
+   Time taken 59.93s
+   Offsets found 150
+   Date 2026-08-22 09:40:05
 
 */
 
@@ -36,9 +36,10 @@ namespace Offsets
         const uintptr_t LuaO_NilObject = REBASE(0x610EFF8);
         const uintptr_t LuaH_DummyNode = REBASE(0x610EEB8);
         // luaT_Eventnames Not found
-        // luaf_newproto Not found
-        // luaF_freeproto Not found
-        const uintptr_t pushInstance = REBASE(0x22FE300);
+        const uintptr_t luaf_newproto = REBASE(0xB503F0);
+        const uintptr_t freeobj = REBASE(0xB456E0);
+        const uintptr_t luaF_freeproto = REBASE(0xB50AB0);
+        const uintptr_t PushInstance = REBASE(0x222A6B0);
         // loadsafe Not found
         const uintptr_t ConnectionDisconnect = REBASE(0x2252430);
         // luaM_toobig Not found
@@ -46,7 +47,7 @@ namespace Offsets
         const uintptr_t luaL_argerrorL = REBASE(0xB71E70);
     }
 
-    namespace RemoteEvent //(credits ravage)
+    namespace RemoteEvent (credits ravage)
     {
         const uintptr_t FireClient = REBASE(0x50333B0);
         const uintptr_t FireServer = REBASE(0x5033210);
@@ -210,7 +211,7 @@ namespace Offsets
     namespace ExtraSpace
     {
         // RequireBypass Not found
-        const uintptr_t IsCoreScript = REBASE(0xC8);
+        const uintptr_t IsCoreScript = REBASE(0xC8); // wrong
         // EnableLoadModule Not found
         const uintptr_t LockViolationInstanceCrash = REBASE(0x6D68410);
         // LockViolationScriptCrash Not found
@@ -246,7 +247,7 @@ namespace Offsets
         // RaknetSend Not found
         // RakPeerVirtualTable Not found
         // ProcessNetworkPacket Not found
-        // ReportNetworkError Not found
+        const uintptr_t ReportNetworkError = REBASE(0x2901380);
         // HandleConnectionState Not found
     }
 
@@ -265,5 +266,3 @@ namespace Roblox
     inline auto GetLuaStateForInstance = (lua_State*(__fastcall*)(uint64_t, uint64_t*, uint64_t*))Offsets::GetLuaStateForInstance;
     inline auto ScriptContextResume = (uint64_t(__fastcall*)(uint64_t, YieldState*, YieldingLuaThread**, uint32_t, uint8_t, uint64_t))Offsets::ScriptContextResume;
 }
-0q5vrv8.txt
-11 KB
