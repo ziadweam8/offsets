@@ -4,9 +4,9 @@
   Zela Dumper 
    Made by king_okr, ziadweam8 & pibbly
    rbx executor-WindowsPlayer-version-ddf602d9cfe44005
-   Time taken 65.57s
+   Time taken 66.43s
    Offsets found 146
-   Date 2026-08-22 04:17:03
+   Date 2026-08-22 05:43:47
 
 */
 
@@ -26,11 +26,9 @@ namespace Offsets
     const uintptr_t Print = REBASE(0x92C340);
     const uintptr_t OpcodeLookupTable = REBASE(0x6B83740);
     const uintptr_t ScriptContextResume = REBASE(0x22BBA10);
-    const uintptr_t GetLuaStateForInstance = REBASE(0x7A5080);
-        const uintptr_t GetLuaState = REBASE(0x58C9D90);
+    const uintptr_t GetLuaStateForInstance = REBASE(0x2219D10);
         const uintptr_t GetPropertyData = REBASE(0x589CEF0);
-        const uintptr_t GetIdentityStruct = REBASE(0x4170);
-        // GetTLSPointer Not found
+        const uintptr_t GetTLSPointer = REBASE(0x4170);
 
     namespace Luau
     {
@@ -48,7 +46,7 @@ namespace Offsets
         const uintptr_t luaL_argerrorL = REBASE(0xB71E70);
     }
 
-    namespace RemoteEvent (credits ravage)
+    namespace RemoteEvent //(credits ravage)
     {
         const uintptr_t FireClient = REBASE(0x50333B0);
         const uintptr_t FireServer = REBASE(0x5033210);
@@ -225,7 +223,7 @@ namespace Offsets
         // luaT_Eventnames Not found
         // FlogDataBank Not found
         // AppDataInfo Not found
-        const uintptr_t IdentityPtr = REBASE(0x7E86E20);
+        const uintptr_t IdentityPtr = REBASE(0x7EEB448);
         // HashTableLookup Not found
     }
 
@@ -237,19 +235,25 @@ namespace Offsets
         const uintptr_t JobName = 0x18;
     }
 
+    namespace TaskScheduler
+    {
+        // SetFFlag Not found
+        // GetFFlag Not found
+    }
+
     namespace Raknet
     {
         // RaknetSend Not found
         // RakPeerVirtualTable Not found
         // ProcessNetworkPacket Not found
-        const uintptr_t ReportNetworkError = REBASE(0x2901380);
+        // ReportNetworkError Not found
         // HandleConnectionState Not found
     }
 
     namespace Misc
     {
         // GetCurrentThreadId Not found
-        const uintptr_t FireTouchInterest = REBASE(0x928E40);
+        const uintptr_t FireTouchInterest = REBASE(0x1E46C30);
         // fireProximityPrompt Not found
     }
 }
@@ -261,3 +265,5 @@ namespace Roblox
     inline auto GetLuaStateForInstance = (lua_State*(__fastcall*)(uint64_t, uint64_t*, uint64_t*))Offsets::GetLuaStateForInstance;
     inline auto ScriptContextResume = (uint64_t(__fastcall*)(uint64_t, YieldState*, YieldingLuaThread**, uint32_t, uint8_t, uint64_t))Offsets::ScriptContextResume;
 }
+0q5vrv8.txt
+11 KB
