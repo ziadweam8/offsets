@@ -161,7 +161,7 @@ namespace Offsets
         const uintptr_t isyieldable = REBASE(0x4880130);
         const uintptr_t running = REBASE(0x48800C0);
         const uintptr_t status = REBASE(0x487E240);
-        const uintptr_t wrap = REBASE(0x487FE00);
+        const uintptr_t wrap = REBASE(0x487FE00); // cowrap
         const uintptr_t yield = REBASE(0x4880060);
         const uintptr_t create = REBASE(0x487F8B0);
         // resume Not found
