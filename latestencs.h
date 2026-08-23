@@ -4,10 +4,12 @@
 #define PROTO_UPVALUES_ENC VMValue1
 #define PROTO_SOURCE_ENC VMValue1
 #define PROTO_DEBUGINSN_ENC VMValue2
-#define PROTO_DEBUGNAME_ENC VMValue4
+#define PROTO_DEBUGNAME_ENC VMValue4 // deprecated
 #define PROTO_TYPEINFO_ENC VMValue1
 #define LSTATE_STACKSIZE_ENC VMValue4
 #define CLOSURE_CONT_ENC VMValue3
 #define CLOSURE_DEBUGNAME_ENC VMValue1
 #define UDATA_META_ENC VMValue3
 #define TSTRING_HASH_ENC VMValue3
+
+proto_userdata is missing apologies
