@@ -242,7 +242,7 @@ namespace Offsets
 
     namespace Misc
     {
-        const uintptr_t FireTouchInterest = REBASE(0x1E46C30); //?
+        const uintptr_t FireTouchInterest = REBASE(0x3842D70); // new overlap in different world
     }
 }
 
