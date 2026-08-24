@@ -235,8 +235,8 @@ namespace Offsets
     namespace Raknet
     {
         const uintptr_t RaknetSend = REBASE(0x49862A0);
-        const uintptr_t RaknetReceive = REBASE(0x4986890);
-        const uintptr_t DeallocatePacket = REBASE(0x4986F40);
+        const uintptr_t RaknetReceive = REBASE(0x4986890); //?
+        const uintptr_t DeallocatePacket = REBASE(0x4986F40); //?
         const uintptr_t vtable = REBASE(0x6A81DE8);
     }
 
