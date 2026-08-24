@@ -1,0 +1,28 @@
+search for Cannot require a RobloxScript module from a non RobloxScript context 
+
+xref the string then decompile
+
+Scroll up
+
+  if ( !*(_BYTE *)(v27 + 0x898) )
+        {
+          v28 = *(_QWORD *)(a1 + 0x58);
+          v161 = *(_OWORD *)(v28 + 0x40);
+          v162 = *(_QWORD *)(v28 + 0x50);
+          if ( (sub_8F7FD0(&v161) & 8) != 0 )
+          {
+            if ( (*(_BYTE *)(v137 + 0x168) & 1) == 0 )
+            {
+              __eh34_enter_wind_state(1, 8);
+              sub_2D1E6E0("Cannot require a non-RobloxScript module from a RobloxScript");
+            }
+          }
+          else if ( (*(_BYTE *)(v137 + 360) & 1) != 0 )
+          {
+            __eh34_enter_wind_state(1, 8);
+            sub_2D1E6E0("Cannot require a RobloxScript module from a non RobloxScript context");
+          }
+        }
+
+  if ( !*(_BYTE *)(v27 + 0x898) ) requirebypass
+            if ( (*(_BYTE *)(v137 + 0x168) & 1) == 0 ) iscorescript
