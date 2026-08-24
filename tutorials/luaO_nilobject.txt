@@ -1,0 +1,24 @@
+string -> getmetatable
+
+xref it, then you will see 
+
+.rdata:00000000062C18D0                 dq offset aGetmetatable ; "getmetatable"
+.rdata:00000000062C18D8                 dq offset sub_485C6F0
+
+sub_485C6F0 is luab_getmetatable
+
+__int64 __fastcall sub_485C6F0(__int64 a1)
+{
+  unsigned __int64 v1; // rax
+  int *v3; // rdi
+  char v4; // al
+  __int64 v5; // rcx
+  unsigned __int64 v6; // r8
+  int v7; // eax
+  __int64 v8; // rdx
+
+  v1 = *(_QWORD *)(a1 + 40);
+  if ( v1 >= *(_QWORD *)(a1 + 8)
+    || (v3 = (int *)&unk_610EFF8, (_UNKNOWN *)v1 == &unk_610EFF8)
+
+unk_610EFF8 is luaO_nilobject
