@@ -1,0 +1,23 @@
+string -> {\"type\":\"table\",\"cat\":%d,\"size\":%d
+
+Decompile it:
+
+__int64 __fastcall sub_B73F80(FILE *Stream, __int64 a2)
+{
+  int v3; // ebp
+  int v5; // eax
+  char v6; // r15
+  __int64 v7; // r14
+  __int64 v8; // rdi
+  int v9; // ecx
+
+  v3 = 0;
+  if ( *(_UNKNOWN **)(a2 + 24) == &unk_610EEB8 )
+    v5 = 0;
+  else
+    v5 = 32 << *(_BYTE *)(a2 + 7);
+  sub_7A4F50(
+    Stream,
+    "{\"type\":\"table\",\"cat\":%d,\"size\":%d",
+
+LuaH_Dummynode is unk_610EEB8
