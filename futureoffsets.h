@@ -55,7 +55,7 @@ namespace Offsets
 
     namespace Raycast
     {
-        // RaycastBoundDesc Not found // bro why the fuck did it break already string raycast not found
+        const uintptr_t RaycastBoundDesc = REBASE(0x8089DA0); // found manually
         const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
     }
 
