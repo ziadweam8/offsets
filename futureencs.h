@@ -1,5 +1,5 @@
 // some stuff may be wrong so ill recheck after luau 0.736 gets pushed
-
+// for old 37...
 #define PROTO_LINEINFO_ENC VMValue3 
 #define PROTO_ABSLINEINFO_ENC VMValue1 
 #define PROTO_LOCVARS_ENC VMValue3 
