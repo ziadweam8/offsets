@@ -60,7 +60,7 @@ namespace Offsets
     namespace Raycast
     {
         // RaycastBoundDesc Not found idk what the fuck they did
-        const uintptr_t RaycastBoundFn = 0x80; // this is HARDCODED
+        const uintptr_t RaycastBoundFn = 0x80; // this is NO LONGER HARDCODED
     }
 
     namespace LuaLib
