@@ -3,6 +3,7 @@
 /*
   Zela Dumper 
    Made by king_okr, ziadweam8 & pibbly
+   Maintained by ziadweam8.
    rbx custom-WindowsPlayer-version-f5a60436d48947d3
    Time taken 48.48s
    Offsets found 160
