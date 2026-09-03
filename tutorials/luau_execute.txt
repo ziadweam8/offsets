@@ -1,0 +1,40 @@
+string -> "iterate over"
+
+go to 1st xref then find the function start, that is likely luau_execute<true>.
+
+In order to get to the luau_execute wrapper, look at the list of xrefs
+
+  Direction	Type	Address	Text
+Up	p	sub_26C4690+76E	call    sub_26E4D30
+Up	p	sub_26CD3C0+834	call    sub_26E4D30
+Up	p	sub_26D4770+744	call    sub_26E4D30
+Up	p	sub_26D4770+F01	call    sub_26E4D30
+Up	p	sub_26D5FC0+10C	call    sub_26E4D30
+Up	p	sub_26D6B80+A53	call    sub_26E4D30
+Up	p	sub_26D8A00+AC1	call    sub_26E4D30
+Up	p	sub_26D96B0+A84	call    sub_26E4D30
+Up	j	sub_26E4530+4	jnz     sub_26E4D30
+Down	p	sub_27197E0+1161	call    sub_26E4D30
+Down	p	sub_3FDC390+C2A	call    sub_26E4D30
+Down	p	sub_400A000+783	call    sub_26E4D30
+Down	p	sub_42A0420+785	call    sub_26E4D30
+Down	p	sub_42A4440+8C1	call    sub_26E4D30
+Down	p	sub_55341C0+AC9	call    sub_26E4D30
+Down	p	sub_5534F20+EA9	call    sub_26E4D30
+Down	p	sub_5539D30+77D	call    sub_26E4D30
+Down	p	sub_55476F0+85A	call    sub_26E4D30
+Down	p	sub_555D890+1029	call    sub_26E4D30
+Down	p	sub_555D890+1E04	call    sub_26E4D30
+
+Find jNZ
+Up	j	sub_26E4530+4	jnz     sub_26E4D30
+Go to it then decompile
+it will be similar to this:
+
+void luau_execute(lua_State* L)
+{
+    if (L->singlestep)
+        luau_execute<true>(L);
+    else
+        luau_execute<false>(L);
+}
