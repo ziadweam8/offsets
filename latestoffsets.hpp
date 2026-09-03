@@ -42,7 +42,7 @@ namespace Offsets
         const uintptr_t luaL_argerrorL = REBASE(0x2705AA0);
     }
 
-    namespace RemoteEvent (credits ravage)
+    namespace RemoteEvent // (credits ravage)
     {
         const uintptr_t FireClient = REBASE(0x3431E50);
         const uintptr_t FireServer = REBASE(0x3431CB0);
@@ -206,9 +206,9 @@ namespace Offsets
 
     namespace ExtraSpace
     {
-        const uintptr_t RequireBypass = REBASE(0xB01); //? wtfffffffff ts def wrong
+        const uintptr_t RequireBypass = REBASE(0xB01); //? 
         const uintptr_t IsCoreScript = REBASE(0x168);
-        const uintptr_t LockViolationInstanceCrash = REBASE(0x84A33C0);
+        const uintptr_t LockViolationInstanceCrash = REBASE(0x84A33C0); //?
     }
 
     namespace Globals
