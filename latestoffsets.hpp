@@ -206,7 +206,7 @@ namespace Offsets
 
     namespace ExtraSpace
     {
-        const uintptr_t RequireBypass = REBASE(0xB01); //? 
+        const uintptr_t RequireBypass = REBASE(0xB01);
         const uintptr_t IsCoreScript = REBASE(0x168);
         const uintptr_t LockViolationInstanceCrash = REBASE(0x84A33C0); //?
     }
